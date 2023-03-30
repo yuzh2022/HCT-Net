@@ -1,5 +1,9 @@
 # HCT-Net
 
+**This repository is an official implementation of the paper  HCT-net: hybrid CNN-transformer model based on a neural architecture search network for medical image segmentation.**
+
+`Yu Z, Lee F, Chen Q. HCT-net: hybrid CNN-transformer model based on a neural architecture search network for medical image segmentation[J]. Applied Intelligence, 2023: 1-17.`
+
 Considering that many manually designed convolutional neural networks (CNNs) for different tasks that require considerable time, labor, and domain knowledge have been designed in the medical image segmentation domain and that most CNN networks only consider local feature information while ignoring the global receptive field due to the convolution limitation, there is still much room for performance improvement. Therefore, designing a new method that can fully capture feature information and save considerable time and human energy with less GPU memory consumption and complexity is necessary. In this paper, we propose a novel hybrid CNN-transformer model based on a neural architecture search network (HCT-Net), which designs a hybrid U-shaped CNN with a key-sampling Transformer backbone that considers contextual and long-range pixel information in the search space and uses a single-path neural architecture search that contains a flexible search space and an efficient search strategy to simultaneously find the optimal subnetwork including three types of cells during SuperNet. Compared with various types of medical image segmentation methods, our framework can achieve competitive precision and efficiency on various datasets, and we also validate the generalization on unseen datasets in extended experiments. In this way, we can verify that our method is competitive and robust.
 
 
