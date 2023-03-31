@@ -11,17 +11,16 @@ sys.path.append('../')
 from hct_net.cell import Cell
 from hct_net.genotypes import *
 from hct_net.operations import *
-from hct_net.nas_model.DeTrans.ops.modules import MSDeformAttn
-from hct_net.nas_model.DeTrans.position_encoding import build_position_encoding
-from hct_net.nas_model.DeTrans.DeformableTrans import DeformableTransformer
+from hct_net.nas_model.Kp_Trans.position_encoding import build_position_encoding
+from hct_net.nas_model.Kp_Trans.DeformableTrans import DeformableTransformer
 
 
-class UnetLayer7(nn.Module):
+class hybridCnnTrans(nn.Module):
     def __init__(self, input_c=3, c=16, num_classes=1, meta_node_num=4, layers=7, dp=0,
                  use_sharing=True, double_down_channel=True, use_softmax_head=False,
                  switches_normal=[], switches_down=[], switches_up=[], early_fix_arch=False, gen_max_child_flag=False,
                  random_sample=False):
-        super(UnetLayer7, self).__init__()
+        super(hybridCnnTrans, self).__init__()
         self.CellLinkDownPos = CellLinkDownPos
         self.CellPos = CellPos
         self.CellLinkUpPos = CellLinkUpPos
@@ -740,9 +739,9 @@ if __name__ == "__main__":
     for i in range(14):
         switches_up.append([True for j in range(len(CellLinkUpPos))])
 
-    model = UnetLayer7(input_c=3, c=16, num_classes=1, meta_node_num=4, layers=7, dp=0,
-                       use_sharing=True, double_down_channel=True, use_softmax_head=False,
-                       switches_normal=switches_normal, switches_down=switches_down, switches_up=switches_up)
+    model = hybridCnnTrans(input_c=3, c=16, num_classes=1, meta_node_num=4, layers=7, dp=0,
+                           use_sharing=True, double_down_channel=True, use_softmax_head=False,
+                           switches_normal=switches_normal, switches_down=switches_down, switches_up=switches_up)
 
     x = torch.FloatTensor(torch.ones(1, 3, 256, 256))
     ress = model(x)

@@ -1,11 +1,11 @@
 from torch.nn import init
 import argparse
-from .UnetFabrices7 import UnetLayer7
+from .hybridCnnTransformer import hybridCnnTrans
 
 
 
 models_dict={
-    'UnetLayer7':UnetLayer7,
+    'UnetLayer7':hybridCnnTrans,
 }
 
 
