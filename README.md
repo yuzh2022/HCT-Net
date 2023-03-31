@@ -2,7 +2,7 @@
 
 **This repository is an official implementation of the paper  [HCT-net: hybrid CNN-transformer model based on a neural architecture search network for medical image segmentation](https://doi.org/10.1007/s10489-023-04570-z).**
 
-If you find Deformable DETR useful in your research, please consider citing:
+If you find HCT-Net useful in your research, please consider citing:
 
 `Yu Z, Lee F, Chen Q. HCT-net: hybrid CNN-transformer model based on a neural architecture search network for medical image segmentation[J]. Applied Intelligence, 2023: 1-17.`
 
